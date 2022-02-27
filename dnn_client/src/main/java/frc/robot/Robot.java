@@ -7,7 +7,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import frc.VisionClient;
+
+import java.util.ArrayList;
 
 
 /**
@@ -21,6 +22,17 @@ public class Robot extends TimedRobot {
 
   private RobotContainer m_robotContainer;
 
+  public volatile static ArrayList<Double> balls;
+
+  public static void writeBalls(ArrayList<Double> data) {
+    balls.clear();
+    balls.addAll(data);
+  }
+
+  public static ArrayList<Double> readBalls() {
+    return balls;
+  }
+
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -30,7 +42,8 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
-    Integer[] balls = VisionClient.getData();
+    VisionClient client = new VisionClient();
+    client.start();
     System.out.print(balls);
   }
 

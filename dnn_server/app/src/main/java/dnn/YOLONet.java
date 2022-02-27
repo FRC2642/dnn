@@ -1,30 +1,6 @@
 package dnn;
 
 /*
-MIT License
-
-Copyright (c) 2021 Florian Bruggisser
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-*/
-
-/*
 YOLONet Example Information
 ---------------------------
 
@@ -32,7 +8,7 @@ This is a basic implementation of a YOLO object detection network inference exam
 It works with most variants of YOLO (YOLOv2, YOLOv2-tiny, YOLOv3, YOLOv3-tiny, YOLOv3-tiny-prn, YOLOv4, YOLOv4-tiny).
 YOLO9000 is not support by OpenCV DNN.
 
-To run the example download the following files and place them in the root folder of your project:
+To run download the following files and place them in the root folder of your project:
 
     YOLOv4 Configuration: https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4.cfg
     YOLOv4 Weights: https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights
@@ -230,6 +206,35 @@ public class YOLONet {
         inputBlob.release();
 
         return result;
+    }
+
+    public List<Double> predictQuick(Mat image){
+        Mat inputBlob = blobFromImage(image,
+                1 / 255.0,
+                new Size(width, height),
+                new Scalar(0.0),
+                true, false, CV_32F);
+
+        net.setInput(inputBlob);
+        MatVector outs = new MatVector(outNames.size());
+        net.forward(outs, outNames);
+        List<ObjectDetectionResult> results = postprocess(image, outs);
+        List<Double> resultsFiltered = new ArrayList<Double>();
+        int i = 0;
+        for (ObjectDetectionResult result:results) {
+            // check if result is ball
+//             if (((result.className.equals("sports ball"))) || (result.className.equals("orange"))) {
+            resultsFiltered.add(result.getMiddleX());
+//            rectangle(image,
+//                    new Point(result.x, result.y),
+//                    new Point(result.x + result.width, result.y + result.height),
+//                    Scalar.MAGENTA, 2, LINE_8, 0);
+//             }
+        }
+//        String path = String.format("outs/out%s.jpg",i);
+//        imwrite(path, image);
+        i = i + 1;
+        return resultsFiltered;
     }
 
     /**
