@@ -3,7 +3,7 @@ package dnn;
 
 import org.opencv.videoio.VideoCapture;
 
-import org.opencv.opencv_core.*;
+import org.opencv.core.*;
 
 import java.util.List;
 
