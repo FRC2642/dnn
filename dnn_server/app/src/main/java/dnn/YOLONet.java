@@ -22,9 +22,8 @@ On CPU it is recommended to decrease the width & height of the network or use th
 import org.javacpp.FloatPointer;
 import org.javacpp.IntPointer;
 import org.javacpp.indexer.FloatIndexer;
-import org.opencv.dnn;
+import org.opencv.dnn.*;
 import org.opencv.core.*;
-import org.opencv.dnn.Net;
 import org.opencv.text.FloatVector;
 import org.opencv.text.IntVector;
 import org.opencv.videoio.VideoCapture;
