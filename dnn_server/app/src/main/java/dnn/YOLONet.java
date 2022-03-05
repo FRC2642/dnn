@@ -22,7 +22,7 @@ On CPU it is recommended to decrease the width & height of the network or use th
 import org.javacpp.FloatPointer;
 import org.javacpp.IntPointer;
 import org.javacpp.indexer.FloatIndexer;
-import org.opencv.global.dnn;
+import org.opencv.dnn;
 import org.opencv.core.*;
 import org.opencv.dnn.Net;
 import org.opencv.text.FloatVector;
@@ -37,12 +37,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 
-import static org.opencv.global.core.CV_32F;
-import static org.opencv.global.core.getCudaEnabledDeviceCount;
-import static org.opencv.global.dnn.*;
-import static org.opencv.global.imgcodecs.imread;
-import static org.opencv.global.imgproc.LINE_8;
-import static org.opencv.global.imgproc.rectangle;
+import static org.opencv.core.CV_32F;
+import static org.opencv.core.getCudaEnabledDeviceCount;
+import static org.opencv.dnn.*;
+import static org.opencv.imgcodecs.imread;
+import static org.opencv.imgproc.LINE_8;
+import static org.opencv.imgproc.rectangle;
 
 
 import static org.opencv.global.opencv_imgcodecs.*;

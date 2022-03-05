@@ -29,6 +29,7 @@ public class Server {
     }
 
     public static void main(String[] args) {
+        System.load("opencv")
         Worker worker = new Worker();
         worker.start();
         try (ServerSocket serverSocket = new ServerSocket(8080)) {
