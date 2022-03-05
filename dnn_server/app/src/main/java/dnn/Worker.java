@@ -1,7 +1,7 @@
 package dnn;
 
 
-import org.opencv.opencv_videoio.VideoCapture;
+import org.opencv.videoio.VideoCapture;
 
 import org.opencv.opencv_core.*;
 

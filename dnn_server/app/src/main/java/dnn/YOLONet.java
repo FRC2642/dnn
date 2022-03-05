@@ -22,12 +22,12 @@ On CPU it is recommended to decrease the width & height of the network or use th
 import org.javacpp.FloatPointer;
 import org.javacpp.IntPointer;
 import org.javacpp.indexer.FloatIndexer;
-import org.opencv.global.opencv_dnn;
-import org.opencv.opencv_core.*;
-import org.opencv.opencv_dnn.Net;
-import org.opencv.opencv_text.FloatVector;
-import org.opencv.opencv_text.IntVector;
-import org.opencv.opencv_videoio.VideoCapture;
+import org.opencv.global.dnn;
+import org.opencv.core.*;
+import org.opencv.dnn.Net;
+import org.opencv.text.FloatVector;
+import org.opencv.text.IntVector;
+import org.opencv.videoio.VideoCapture;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -37,12 +37,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 
-import static org.opencv.global.opencv_core.CV_32F;
-import static org.opencv.global.opencv_core.getCudaEnabledDeviceCount;
-import static org.opencv.global.opencv_dnn.*;
-import static org.opencv.global.opencv_imgcodecs.imread;
-import static org.opencv.global.opencv_imgproc.LINE_8;
-import static org.opencv.global.opencv_imgproc.rectangle;
+import static org.opencv.global.core.CV_32F;
+import static org.opencv.global.core.getCudaEnabledDeviceCount;
+import static org.opencv.global.dnn.*;
+import static org.opencv.global.imgcodecs.imread;
+import static org.opencv.global.imgproc.LINE_8;
+import static org.opencv.global.imgproc.rectangle;
 
 
 import static org.opencv.global.opencv_imgcodecs.*;
