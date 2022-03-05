@@ -1,9 +1,9 @@
 package dnn;
 
 
-import org.bytedeco.opencv.opencv_videoio.VideoCapture;
+import org.opencv.opencv_videoio.VideoCapture;
 
-import org.bytedeco.opencv.opencv_core.*;
+import org.opencv.opencv_core.*;
 
 import java.util.List;
 

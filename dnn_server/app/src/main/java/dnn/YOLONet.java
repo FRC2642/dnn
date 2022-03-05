@@ -19,15 +19,15 @@ For faster inferencing CUDA is highly recommended.
 On CPU it is recommended to decrease the width & height of the network or use the tiny variants.
  */
 
-import org.bytedeco.javacpp.FloatPointer;
-import org.bytedeco.javacpp.IntPointer;
-import org.bytedeco.javacpp.indexer.FloatIndexer;
-import org.bytedeco.opencv.global.opencv_dnn;
-import org.bytedeco.opencv.opencv_core.*;
-import org.bytedeco.opencv.opencv_dnn.Net;
-import org.bytedeco.opencv.opencv_text.FloatVector;
-import org.bytedeco.opencv.opencv_text.IntVector;
-import org.bytedeco.opencv.opencv_videoio.VideoCapture;
+import org.javacpp.FloatPointer;
+import org.javacpp.IntPointer;
+import org.javacpp.indexer.FloatIndexer;
+import org.opencv.global.opencv_dnn;
+import org.opencv.opencv_core.*;
+import org.opencv.opencv_dnn.Net;
+import org.opencv.opencv_text.FloatVector;
+import org.opencv.opencv_text.IntVector;
+import org.opencv.opencv_videoio.VideoCapture;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -37,15 +37,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 
-import static org.bytedeco.opencv.global.opencv_core.CV_32F;
-import static org.bytedeco.opencv.global.opencv_core.getCudaEnabledDeviceCount;
-import static org.bytedeco.opencv.global.opencv_dnn.*;
-import static org.bytedeco.opencv.global.opencv_imgcodecs.imread;
-import static org.bytedeco.opencv.global.opencv_imgproc.LINE_8;
-import static org.bytedeco.opencv.global.opencv_imgproc.rectangle;
+import static org.opencv.global.opencv_core.CV_32F;
+import static org.opencv.global.opencv_core.getCudaEnabledDeviceCount;
+import static org.opencv.global.opencv_dnn.*;
+import static org.opencv.global.opencv_imgcodecs.imread;
+import static org.opencv.global.opencv_imgproc.LINE_8;
+import static org.opencv.global.opencv_imgproc.rectangle;
 
 
-import static org.bytedeco.opencv.global.opencv_imgcodecs.*;
+import static org.opencv.global.opencv_imgcodecs.*;
 
 
 

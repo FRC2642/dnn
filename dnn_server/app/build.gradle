@@ -30,6 +30,8 @@ dependencies {
 
     implementation 'com.google.code.gson:gson:2.9.0'
 
+    implementation group: 'org.bytedeco', name: 'javacpp', version: '1.5.7'
+
     implementation files(new File(System.getProperty("user.home"), 'opencv\\build\\java\\opencv-410.jar'))
 }
 
