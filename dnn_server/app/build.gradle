@@ -32,7 +32,7 @@ dependencies {
 
     implementation group: 'org.bytedeco', name: 'javacpp', version: '1.5.7'
 
-    implementation files(new File(System.getProperty("user.home"), 'opencv\\build\\java\\opencv-410.jar'))
+    implementation files(new File(System.getProperty("user.home"), 'opencv\\build\\bin\\opencv-455.jar'))
 }
 
 application {
