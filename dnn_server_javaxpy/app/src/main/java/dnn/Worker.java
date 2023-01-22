@@ -49,8 +49,8 @@ public class Worker extends Thread {
                     ByteArrayOutputStream buffer = new ByteArrayOutputStream();
                     Worker.setBuffer(buffer);
                     int nRead;
-                    byte[] data = new byte[16777216];
-
+                    // byte[] data = new byte[16777216];
+                    byte[] data = new byte[16384];
                     while ((nRead = in.read(data, 0, data.length)) != -1) {
                       Worker.buffer.write(data, 0, nRead);
                     }
