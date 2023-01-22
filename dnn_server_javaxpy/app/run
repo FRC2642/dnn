@@ -1,2 +1,2 @@
 #!/bin/sh
-python yolo.py
+python3 /home/pirates/yolov7/detect_print.py --weights tiny.pt --device 0 --source 0 --img-size 416 --conf 0.5
